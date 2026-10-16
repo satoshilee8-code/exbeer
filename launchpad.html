@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | ExBeer</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260615-activitylog" />
+  </head>
+  <body data-page="launchpad">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="ExBeer">
+        <span class="brand-logo" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><defs><linearGradient id="exbeerLogoGlow" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#f2b94b"/><stop offset="0.48" stop-color="#39d6bd"/><stop offset="1" stop-color="#9ee7ff"/></linearGradient></defs><path class="logo-frame" d="M32 5 55 18v28L32 59 9 46V18L32 5Z"/><path class="logo-link" d="M21 36h14c6 0 9-8 15-8"/><path class="logo-link" d="M43 21l7 7-7 7"/><path class="logo-candle" d="M20 24v16M28 18v22M36 25v15"/><circle class="logo-node" cx="20" cy="24" r="3"/><circle class="logo-node" cx="28" cy="18" r="3"/><circle class="logo-node" cx="36" cy="25" r="3"/></svg></span>
+        <span>ExBeer</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航" data-i18n-aria-label="navAria">
+        <a href="/" aria-current="page" data-i18n="navHome">首页</a>
+        <a href="/staking" data-i18n="navStaking">发射台</a>
+        <a href="/spot" data-i18n="navSpot">现货交易</a>
+        <a href="/perps" data-i18n="navPerp">合约</a>
+        <a href="/airdrop" data-i18n="navAirdrop">空投查询</a>
+        
+        
+      </nav>
+      <div class="wallet-cluster">
+        <span class="network-pill">BNB Smart Chain</span>
+        <div class="language-menu" id="languageMenu">
+          <button class="language-toggle" id="languageToggle" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="language-flag flag-us" id="languageFlag" aria-hidden="true"></span>
+            <span id="languageLabel">English</span>
+            <span class="language-caret">⌄</span>
+          </button>
+          <div class="language-options" role="menu">
+            <button class="language-option" type="button" data-language="zh" role="menuitem"><span class="language-flag flag-cn" aria-hidden="true"></span><strong>中文</strong></button>
+            <button class="language-option" type="button" data-language="en" role="menuitem"><span class="language-flag flag-us" aria-hidden="true"></span><strong>English</strong></button>
+          </div>
+        </div>
+        <button class="wallet-button" id="connectWallet" type="button" data-i18n="connectWallet">连接钱包</button>
+      </div>
+    </header>
+
+    <main class="home-main">
+      <section class="intro-hero">
+        <div class="hero-media" aria-hidden="true"><img src="assets/hero-web3-home.webp" alt="" width="1280" height="544" fetchpriority="high" decoding="async" /></div>
+        <div class="intro-hero-grid">
+          <div class="intro-copy">
+            <div class="status-row"><span class="live-dot"></span><span data-i18n="homeHeroStatus">ex.beer · BSC 链上发射平台</span></div>
+            <h1 data-i18n="homeHeroTitle">ExBeer</h1>
+            <p data-i18n="homeHeroCopy">平台围绕项目首发、合约交易、DAO 治理、质押权益与空投查询构建，让新资产从发行到流动性上线都在同一个 Web3 入口完成。</p>
+            <div class="hero-actions">
+              <a class="primary-action" href="/airdrop" data-i18n="homePrimaryAction">查询 EXB 空投</a>
+              <a class="secondary-action" href="#platformFeatures" data-i18n="homeSecondaryAction">了解平台功能</a>
+            </div>
+          </div>
+
+          <aside class="home-countdown" aria-label="上线倒计时" data-i18n-aria-label="countdownTitle">
+            <span class="countdown-kicker" data-i18n="countdownKicker">T-MINUS TO LAUNCH</span>
+            <strong data-i18n="countdownTitle">主网上线倒计时</strong>
+            <div class="home-countdown-grid" aria-live="polite">
+              <div><b data-home-countdown="days">--</b><small data-i18n="countdownDays">天</small></div>
+              <div><b data-home-countdown="hours">--</b><small data-i18n="countdownHours">小时</small></div>
+              <div><b data-home-countdown="minutes">--</b><small data-i18n="countdownMinutes">分钟</small></div>
+              <div><b data-home-countdown="seconds">--</b><small data-i18n="countdownSeconds">秒</small></div>
+            </div>
+            <em data-i18n="countdownLaunchTime">上线时间：2027年6月13日 00:00:00</em>
+          </aside>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+
+      <section class="ecosystem-strip" aria-label="平台核心指标">
+        <div><span data-i18n="homeNetworkLabel">底层网络</span><strong>BNB Smart Chain</strong></div>
+        <div><span data-i18n="homeDomainLabel">官网域名</span><strong>ex.beer</strong></div>
+        <div><span data-i18n="homeTokenLabel">生态代币</span><strong>EXB</strong></div>
+        <div><span data-i18n="homeLaunchLabel">上线时间</span><strong>2027.06.13</strong></div>
+      </section>
+
+      <section class="intro-section" id="platformFeatures">
+        <div class="section-title intro-title">
+          <span data-i18n="homeFeatureEyebrow">Platform Modules</span>
+          <h2 data-i18n="homeFeatureTitle">围绕 BSC 新资产生命周期设计的四个核心模块</h2>
+        </div>
+        <div class="intro-feature-grid">
+          <article class="intro-feature-card">
+            <span class="feature-index">01</span>
+            <h3 data-i18n="homeFeatureLaunchpadTitle">链上发射平台</h3>
+            <p data-i18n="homeFeatureLaunchpadCopy">支持项目首发、白名单、认购、额度分配、解锁展示与链上领取记录，帮助 BSC 项目完成冷启动。</p>
+          </article>
+          <article class="intro-feature-card">
+            <span class="feature-index">02</span>
+            <h3 data-i18n="homeFeatureExchangeTitle">合约交易所</h3>
+            <p data-i18n="homeFeatureExchangeCopy">规划接入 Swap 与永续合约市场，提供新资产上线后的价格发现、流动性承接与风险参数展示。</p>
+          </article>
+          <article class="intro-feature-card">
+            <span class="feature-index">03</span>
+            <h3 data-i18n="homeFeatureStakingTitle">质押权益</h3>
+            <p data-i18n="homeFeatureStakingCopy">使用 EXB 质押等级连接 Launchpad 额度、手续费权益、空投资格与生态治理权重。</p>
+          </article>
+          <article class="intro-feature-card">
+            <span class="feature-index">04</span>
+            <h3 data-i18n="homeFeatureDaoTitle">DAO 治理</h3>
+            <p data-i18n="homeFeatureDaoCopy">通过 DAO 参与项目准入、参数调整、费用分配、回购销毁等关键决策，让社区参与平台增长。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-terminal-section">
+        <div class="terminal-visual">
+          <img src="assets/hero-web3-panel.webp" alt="ExBeer Web3 terminal visual" width="960" height="408" loading="lazy" decoding="async" />
+          <div class="terminal-overlay" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="terminal-copy">
+          <span data-i18n="homeTerminalEyebrow">Unified Web3 Terminal</span>
+          <h2 data-i18n="homeTerminalTitle">把发射、交易、质押和空投查询放进同一个链上入口</h2>
+          <p data-i18n="homeTerminalCopy">ExBeer 面向 BSC 新资产生态设计，项目方可以展示发行进度、锁仓与上线节奏，用户则可以在同一处查看额度、参与认购、跟踪解锁并进入交易市场。</p>
+          <div class="terminal-data-grid">
+            <div><small data-i18n="homeTerminalLaunches">发行入口</small><strong>IDO / Fair Launch</strong></div>
+            <div><small data-i18n="homeTerminalMarkets">交易市场</small><strong>Swap / Perps</strong></div>
+            <div><small data-i18n="homeTerminalRights">权益层</small><strong>EXB Staking</strong></div>
+            <div><small data-i18n="homeTerminalRecords">链上记录</small><strong>Claim / Vesting</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-flow">
+        <div>
+          <span data-i18n="homeFlowEyebrow">On-chain Flow</span>
+          <h2 data-i18n="homeFlowTitle">从项目发行到交易治理，一条链路完成</h2>
+          <p data-i18n="homeFlowCopy">ExBeer 将发行、认购、解锁、流动性、质押与治理组合成统一体验，减少用户在多个站点之间切换的成本。</p>
+        </div>
+        <ol class="flow-steps">
+          <li><span>01</span><strong data-i18n="homeFlowStepOne">项目提交与社区筛选</strong></li>
+          <li><span>02</span><strong data-i18n="homeFlowStepTwo">白名单、认购和空投分配</strong></li>
+          <li><span>03</span><strong data-i18n="homeFlowStepThree">上线交易、质押和 DAO 治理</strong></li>
+        </ol>
+      </section>
+
+      <section class="home-ecosystem-map">
+        <div class="section-title intro-title">
+          <span data-i18n="homeMapEyebrow">Ecosystem Map</span>
+          <h2 data-i18n="homeMapTitle">围绕 EXB 的平台权益与增长路径</h2>
+        </div>
+        <div class="map-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="homeMapAirdropTitle">空投额度</h3>
+            <p data-i18n="homeMapAirdropCopy">用户连接钱包后查询 EXB 空投份额，额度分两期解锁，并按主网上线价格展示资产估值。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="homeMapLaunchTitle">项目首发</h3>
+            <p data-i18n="homeMapLaunchCopy">发射台承载白名单、认购、额度等级与上线倒计时，让新项目有清晰的链上发布路径。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="homeMapTradeTitle">交易承接</h3>
+            <p data-i18n="homeMapTradeCopy">现货与合约模块用于承接项目上线后的价格发现、流动性和风险参数展示。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3 data-i18n="homeMapGovernanceTitle">社区治理</h3>
+            <p data-i18n="homeMapGovernanceCopy">DAO 将用于项目筛选、费用分配、生态激励与关键参数调整，让社区参与平台长期建设。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="app.js?v=20260615-activitylog"></script>
+  </body>
+</html>

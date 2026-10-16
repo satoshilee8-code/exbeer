@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExBeer Admin | 空投后台</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260615-activitylog" />
+  </head>
+  <body class="admin-body">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="ExBeer">
+        <span class="brand-logo" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><defs><linearGradient id="exbeerLogoGlow" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#f2b94b"/><stop offset="0.48" stop-color="#39d6bd"/><stop offset="1" stop-color="#9ee7ff"/></linearGradient></defs><path class="logo-frame" d="M32 5 55 18v28L32 59 9 46V18L32 5Z"/><path class="logo-link" d="M21 36h14c6 0 9-8 15-8"/><path class="logo-link" d="M43 21l7 7-7 7"/><path class="logo-candle" d="M20 24v16M28 18v22M36 25v15"/><circle class="logo-node" cx="20" cy="24" r="3"/><circle class="logo-node" cx="28" cy="18" r="3"/><circle class="logo-node" cx="36" cy="25" r="3"/></svg></span>
+        <span>ExBeer</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="/" data-i18n="navHome">首页</a>
+        <a href="/staking">发射台</a>
+        <a href="/spot">现货交易</a>
+        <a href="/perps">合约</a>
+        <a href="/airdrop">空投查询</a>
+        
+        
+      </nav>
+      <div class="wallet-cluster">
+        <span class="network-pill">Admin Console</span>
+        <button class="wallet-button" id="logoutButton" type="button">退出</button>
+      </div>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <div class="status-row">
+            <span class="live-dot"></span>
+            <span>EXB Airdrop Admin</span>
+          </div>
+          <h1>空投列表管理后台</h1>
+          <p>登录后可以管理 EXB 空投地址、份额和数据库记录。1 份 = 1,000,000 EXB。</p>
+        </div>
+      </section>
+
+      <section class="admin-login" id="loginPanel">
+        <article class="admin-card">
+          <div class="section-title compact">
+            <span>Login</span>
+            <h2>管理员登录</h2>
+          </div>
+          <form id="loginForm" class="admin-form">
+            <label>
+              <span>账户</span>
+              <input id="adminUsername" type="text" autocomplete="username" />
+            </label>
+            <label>
+              <span>密码</span>
+              <input id="adminPassword" type="password" autocomplete="current-password" />
+            </label>
+            <button class="wide-button" type="submit">登录后台</button>
+            <p class="database-note" id="loginMessage">请输入管理员账户和密码。</p>
+          </form>
+        </article>
+      </section>
+
+      <section class="admin-dashboard hidden" id="dashboardPanel">
+        <div class="admin-summary">
+          <article>
+            <span>地址数量</span>
+            <strong id="summaryCount">--</strong>
+          </article>
+          <article>
+            <span>总份额</span>
+            <strong id="summaryShares">--</strong>
+          </article>
+          <article>
+            <span>总 EXB</span>
+            <strong id="summaryTokens">--</strong>
+          </article>
+        </div>
+
+        <div class="admin-grid">
+          <article class="admin-card">
+            <div class="section-title compact">
+              <span>Allocation</span>
+              <h2>新增 / 修改空投</h2>
+            </div>
+            <form id="allocationForm" class="admin-form">
+              <label>
+                <span>钱包地址</span>
+                <input id="walletAddress" type="text" placeholder="0x..." />
+              </label>
+              <label>
+                <span>空投份额</span>
+                <input id="shareAmount" type="number" min="0" step="0.5" placeholder="例如 1 或 0.5" />
+              </label>
+              <button class="wide-button" type="submit">保存空投额度</button>
+              <p class="database-note" id="adminMessage">保存后会直接写入 SQLite 数据库。</p>
+            </form>
+          </article>
+
+          <article class="admin-card admin-table-card">
+            <div class="section-title">
+              <div>
+                <span>Database</span>
+                <h2>空投列表</h2>
+              </div>
+              <button class="secondary-action" id="refreshButton" type="button">刷新</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>钱包地址</th>
+                    <th>份额</th>
+                    <th>EXB</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="allocationRows"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+
+        <section class="admin-activity">
+          <div class="admin-summary compact-summary">
+            <article>
+              <span>页面访问</span>
+              <strong id="activityPageViews">--</strong>
+            </article>
+            <article>
+              <span>钱包登录</span>
+              <strong id="activityWalletLogins">--</strong>
+            </article>
+            <article>
+              <span>空投查询</span>
+              <strong id="activityAirdropQueries">--</strong>
+            </article>
+          </div>
+          <article class="admin-card admin-table-card">
+            <div class="section-title">
+              <div>
+                <span>Activity</span>
+                <h2>访问与钱包记录</h2>
+              </div>
+              <button class="secondary-action" id="refreshActivityButton" type="button">刷新记录</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>类型</th>
+                    <th>IP</th>
+                    <th>钱包地址</th>
+                    <th>页面 / 接口</th>
+                    <th>详情</th>
+                    <th>时间</th>
+                  </tr>
+                </thead>
+                <tbody id="activityRows"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="admin.js?v=20260615-activitylog"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spot Trading | ExBeer</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260615-activitylog" />
+  </head>
+  <body class="locked-page" data-page="spot">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="ExBeer"><span class="brand-logo" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><defs><linearGradient id="exbeerLogoGlow" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#f2b94b"/><stop offset="0.48" stop-color="#39d6bd"/><stop offset="1" stop-color="#9ee7ff"/></linearGradient></defs><path class="logo-frame" d="M32 5 55 18v28L32 59 9 46V18L32 5Z"/><path class="logo-link" d="M21 36h14c6 0 9-8 15-8"/><path class="logo-link" d="M43 21l7 7-7 7"/><path class="logo-candle" d="M20 24v16M28 18v22M36 25v15"/><circle class="logo-node" cx="20" cy="24" r="3"/><circle class="logo-node" cx="28" cy="18" r="3"/><circle class="logo-node" cx="36" cy="25" r="3"/></svg></span><span>ExBeer</span></a>
+      <nav class="nav-links" aria-label="主导航" data-i18n-aria-label="navAria">
+        <a href="/" data-i18n="navHome">首页</a><a href="/staking" data-i18n="navStaking">发射台</a><a href="/spot" aria-current="page" data-i18n="navSpot">现货交易</a><a href="/perps" data-i18n="navPerp">合约</a><a href="/airdrop" data-i18n="navAirdrop">空投查询</a>
+      </nav>
+      <div class="wallet-cluster">
+        <span class="network-pill">BNB Smart Chain</span>
+        <div class="language-menu" id="languageMenu"><button class="language-toggle" id="languageToggle" type="button" aria-haspopup="true" aria-expanded="false"><span class="language-flag flag-us" id="languageFlag" aria-hidden="true"></span><span id="languageLabel">English</span><span class="language-caret">⌄</span></button><div class="language-options" role="menu"><button class="language-option" type="button" data-language="zh" role="menuitem"><span class="language-flag flag-cn" aria-hidden="true"></span><strong>中文</strong></button><button class="language-option" type="button" data-language="en" role="menuitem"><span class="language-flag flag-us" aria-hidden="true"></span><strong>English</strong></button></div></div>
+        <button class="wallet-button" id="connectWallet" type="button" data-i18n="connectWallet">连接钱包</button>
+      </div>
+    </header>
+    <main>
+      <section class="airdrop-hero">
+        <div class="hero-media" aria-hidden="true"><img src="assets/hero-web3-home.webp" alt="" /></div>
+        <div class="airdrop-hero-content"><div class="status-row"><span class="live-dot"></span><span>ExBeer Spot · ex.beer</span></div><h1 data-i18n="tradeTitle">链上交易台</h1><p data-i18n="heroCopy">ExBeer（ex.beer）面向 BNB Chain 项目方与交易用户，连接 IDO 发行、流动性上线、Swap 与永续合约市场。</p></div>
+      </section>
+      <section class="trade-layout" id="trade">
+        <div class="section-title"><span>Exchange</span><h2 data-i18n="tradeTitle">链上交易台</h2></div>
+        <div class="trade-grid spot-page-grid">
+          <article class="market-board">
+            <div class="market-head"><div><span>BNB / USDT</span><strong>$618.24</strong></div><em>+3.18%</em></div>
+            <div class="chart-bars" aria-label="行情图" data-i18n-aria-label="chartAria"><span style="height: 32%"></span><span style="height: 48%"></span><span style="height: 42%"></span><span style="height: 66%"></span><span style="height: 56%"></span><span style="height: 78%"></span><span style="height: 72%"></span><span style="height: 88%"></span><span style="height: 64%"></span><span style="height: 92%"></span><span style="height: 84%"></span><span style="height: 96%"></span></div>
+            <div class="orderbook"><div><span data-i18n="askOne">卖一</span><strong>619.02</strong><em>82.4 BNB</em></div><div><span data-i18n="bidOne">买一</span><strong>617.96</strong><em>104.1 BNB</em></div><div><span data-i18n="slippage">滑点</span><strong>0.35%</strong><em>Auto</em></div></div>
+          </article>
+          <article class="swap-card">
+            <div class="tabs" role="tablist"><button class="tab active" type="button">Swap</button><button class="tab" type="button">Limit</button></div>
+            <label><span data-i18n="pay">支付</span><input id="payAmount" type="number" min="0" value="1.25" /><strong>BNB</strong></label>
+            <label><span data-i18n="receive">获得</span><input id="receiveAmount" type="number" min="0" value="772.80" readonly /><strong>USDT</strong></label>
+            <button class="wide-button" type="button" data-i18n="confirmSwap">确认兑换</button>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="app.js?v=20260615-activitylog"></script>
+  </body>
+</html>
