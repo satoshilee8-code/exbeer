@@ -547,7 +547,10 @@ class ExBeerHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    import os
+
     init_database()
-    server = ThreadingHTTPServer(("127.0.0.1", 4174), ExBeerHandler)
-    print("ExBeer server running at http://127.0.0.1:4174")
+    port = int(os.environ.get("PORT", 4174))
+    server = ThreadingHTTPServer(("0.0.0.0", port), ExBeerHandler)
+    print(f"ExBeer server running on port {port}")
     server.serve_forever()
